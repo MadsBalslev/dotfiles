@@ -20,4 +20,9 @@ function mkcd()
 
 alias zshconfig="code ~/.zshrc"
 
+# Git aliases
+alias gaa="git add ."
+alias gcm="git commit -m"
+alias gpsh="git push origin"
+
 cd ~
