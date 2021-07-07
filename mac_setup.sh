@@ -9,21 +9,22 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "Hello $(whoami)! Let's get you set up."
 
-echo "mkdir -p $(HOME)/dev"
-mkdir -p "$(HOME)/dev"
+echo "mkdir ~/dev"
+mkdir "~/dev"
 
 echo "Setting up xcode. This might take a while..."
 xcode-select --install
 
 echo "installing homebrew"
 # install homebrew https://brew.sh
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "brew installing stuff"
 # zsh: Instead of bash
 # tree: really handy for listing out directories in text
 # jq: A lightweight and flexible command-line JSON processor
-brew install zsh tree jq git python3 pipenv hub zsh-syntax-highlighting zsh-autosuggestions tldr
+brew install zsh tree jq git python3 pipenv hub zsh-syntax-highlighting zsh-autosuggestions tldr \
+neovim tmux
 
 echo "Installed Python version ${python3 --version}"
 
@@ -82,16 +83,16 @@ git config --global user.email "madspbalslev@gmail.com"
 git config --global color.ui auto
 
 echo "Generating an RSA token for GitHub"
-mkdir -p ~/.ssh
+mkdir ~/.ssh
 ssh-keygen -t rsa -b 4096 -C "madspbalslev@gmail.com"
 echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_rsa" | tee ~/.ssh/config
 eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
 
 echo "cloning dotfiles"
-git clone git@github.com:MadsBalslev/dotfiles.git "${HOME}/dotfiles"
-ln -s "${HOME}/dotfiles/mads.zsh-theme" "${HOME}/.oh-my-zsh/themes/mads.zsh-theme"
-ln -s "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"
+git clone git@github.com:MadsBalslev/dotfiles.git "~/dotfiles"
+ln -s "~/dotfiles/mads.zsh-theme" "~/.oh-my-zsh/themes/mads.zsh-theme"
+ln -s "~/dotfiles/.zshrc" "~/.zshrc"
 
 ###############################################################################
 # Kill affected applications                                                  #
