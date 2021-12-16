@@ -1,7 +1,4 @@
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/tcl-tk/lib"
-export CPPFLAGS="-I/usr/local/opt/tcl-tk/include"
-export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
 
 HOST_NAME=Mads
 
