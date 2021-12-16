@@ -84,6 +84,8 @@ git clone https://github.com/MadsBalslev/dotfiles.git ~/dotfiles
 ln -s ~/dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes/mads.zsh-theme
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 
+touch ~/.hushlogin
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
