@@ -80,7 +80,7 @@ eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
 
 echo "cloning dotfiles"
-git clone git@github.com:MadsBalslev/dotfiles.git ~/dotfiles
+git clone https://github.com/MadsBalslev/dotfiles.git ~/dotfiles
 ln -s ~/dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes/mads.zsh-theme
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 
