@@ -5,9 +5,6 @@ export PKG_CONFIG_PATH="/usr/local/opt/tcl-tk/lib/pkgconfig"
 
 HOST_NAME=Mads
 
-source ~/.nvm/nvm.sh
-nvm use --lts
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/mads/.oh-my-zsh"
 
