@@ -10,12 +10,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "Hello $(whoami)! Let's get you set up."
 
 echo "mkdir ~/dev"
-mkdir "~/dev"
+mkdir ~/dev
 
-echo "Setting up xcode. This might take a while..."
-xcode-select --install
-
-echo "installing homebrew"
+echo "installing homebrew & xcode dev tools"
 # install homebrew https://brew.sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -23,34 +20,24 @@ echo "brew installing stuff"
 # zsh: Instead of bash
 # tree: really handy for listing out directories in text
 # jq: A lightweight and flexible command-line JSON processor
-brew install zsh tree jq git python3 pipenv hub zsh-syntax-highlighting zsh-autosuggestions tldr \
-neovim tmux
+brew install jq git tldr neovim tmux
 
-echo "Installed Python version ${python3 --version}"
+echo "installing node (via nvm)"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
-echo "Setting default shell to zsh"
-chsh -s /bin/zsh
-
-echo "installing node (via n-install)"
-curl -L https://git.io/n-install | bash
-
-echo "node --version: $(node --version)"
-echo "npm --version: $(npm --version)"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 echo "installing oh my zsh"
 # Install Oh My Zsh
 curl -L http://install.ohmyz.sh | sh
 
-echo "installing apps with brew cask"
-brew cask install alfred discord iterm2 spectacle firefox-developer-edition \
-spotify steam transmission google-chrome visual-studio-code insomnia intellij-idea \
-dashlane notion microsoft-office vlc
+echo "installing apps with brew"
+brew install alfred discord iterm2 spectacle firefox-developer-edition \
+spotify steam transmission google-chrome visual-studio-code insomnia vlc
 
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
-
-#Installing som global npm packages
-npm install -g vue-cli
 
 ###############################################################################
 #                          Set Mac settings                                   #
@@ -75,9 +62,6 @@ defaults write com.apple.dock autohide -bool true
 ###############################################################################
 echo "Configuring some git settings"
 
-brew install jesseduffield/lazygit/lazygit
-brew install lazygit
-
 git config --global user.name "Mads Balslev"
 git config --global user.email "madspbalslev@gmail.com"
 git config --global color.ui auto
@@ -90,9 +74,9 @@ eval "$(ssh-agent -s)"
 echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
 
 echo "cloning dotfiles"
-git clone git@github.com:MadsBalslev/dotfiles.git "~/dotfiles"
-ln -s "~/dotfiles/mads.zsh-theme" "~/.oh-my-zsh/themes/mads.zsh-theme"
-ln -s "~/dotfiles/.zshrc" "~/.zshrc"
+git clone git@github.com:MadsBalslev/dotfiles.git ~/dotfiles
+ln -s ~/dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes/mads.zsh-theme
+ln -s ~/dotfiles/.zshrc ~/.zshrc
 
 ###############################################################################
 # Kill affected applications                                                  #
