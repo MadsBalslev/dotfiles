@@ -32,7 +32,13 @@ echo "installing oh my zsh"
 # Install Oh My Zsh
 curl -L http://install.ohmyz.sh | sh
 
+echo "Custom ZSH plugins"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+
 echo "installing apps with brew"
+brew tap homebrew/cask-versions
 brew install alfred discord iterm2 spectacle firefox-developer-edition \
 spotify steam transmission google-chrome visual-studio-code insomnia vlc
 
