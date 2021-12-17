@@ -3,7 +3,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 HOST_NAME=Mads
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/mads/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
