@@ -42,8 +42,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 echo "installing apps with brew"
 brew tap homebrew/cask-versions
-brew install alfred discord iterm2 spectacle firefox-developer-edition \
-spotify steam transmission google-chrome visual-studio-code insomnia vlc
+brew install alfred discord iterm2 spectacle firefox-developer-edition spotify steam transmission google-chrome visual-studio-code insomnia vlc neovim
 
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
