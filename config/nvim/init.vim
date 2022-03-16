@@ -23,6 +23,7 @@ call plug#begin()
 call plug#end()
 
 colorscheme dracula
+let NERDTreeShowHidden=1
 
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
