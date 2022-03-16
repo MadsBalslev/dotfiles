@@ -15,8 +15,8 @@ call plug#begin()
 	Plug 'https://github.com/tpope/vim-surround'
 	Plug 'https://github.com/tpope/vim-commentary'
 	Plug 'https://github.com/vim-airline/vim-airline'
-	Plug 'https://github.com/preservim/nerdtree' |
-            \ Plug 'Xuyuanp/nerdtree-git-plugin'
+	Plug 'https://github.com/preservim/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'https://github.com/ryanoasis/vim-devicons'
 	Plug 'https://github.com/dracula/vim'
 	Plug 'https://github.com/airblade/vim-gitgutter'
