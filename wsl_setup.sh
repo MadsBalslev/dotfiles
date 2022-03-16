@@ -44,6 +44,7 @@ git config --global user.name "Mads Balslev"
 git config --global user.email madspbalslev@gmail.com
 git config --global init.defaultBranch main
 git config --global color.ui auto
+git config --global autocrlf false
 
 ########################
 #       NVM Setup     #
@@ -80,3 +81,8 @@ gem install rails
 #   Install stuff   #
 ####################
 sudo apt install neovim
+
+# Plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+nvim +'PlugInstall --sync' +qa

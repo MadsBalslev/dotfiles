@@ -74,6 +74,7 @@ echo "Configuring some git settings"
 git config --global user.name "Mads Balslev"
 git config --global user.email "madspbalslev@gmail.com"
 git config --global color.ui auto
+git config --global autocrlf false
 
 echo "Generating an RSA token for GitHub"
 mkdir ~/.ssh
@@ -87,6 +88,10 @@ git clone https://github.com/MadsBalslev/dotfiles.git ~/dotfiles
 ln -s ~/dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes/mads.zsh-theme
 ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/config/nvim/init.vim ~/.config/nvim/init.vim
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+nvim +'PlugInstall --sync' +qa
 
 touch ~/.hushlogin
 
