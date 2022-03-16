@@ -19,6 +19,7 @@ call plug#begin()
             \ Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'https://github.com/ryanoasis/vim-devicons'
 	Plug 'https://github.com/dracula/vim'
+	Plug 'https://github.com/airblade/vim-gitgutter'
 call plug#end()
 
 colorscheme dracula
