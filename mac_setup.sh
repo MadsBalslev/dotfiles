@@ -11,6 +11,7 @@ echo "Hello $(whoami)! Let's get you set up."
 
 echo "mkdir ~/dev"
 mkdir ~/dev
+mkdir -p ~/.config/nvim
 
 echo "installing homebrew & xcode dev tools"
 # install homebrew https://brew.sh
@@ -85,6 +86,7 @@ echo "cloning dotfiles"
 git clone https://github.com/MadsBalslev/dotfiles.git ~/dotfiles
 ln -s ~/dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes/mads.zsh-theme
 ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/config/nvim/init.vim ~/.config/nvim/init.vim
 
 touch ~/.hushlogin
 

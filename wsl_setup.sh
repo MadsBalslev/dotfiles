@@ -22,8 +22,12 @@ git clone https://github.com/MadsBalslev/dotfiles.git ~/.dotfiles
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-mv ~/.dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes
-mv ~/.dotfiles/.zshrc_wsl ~/.zshrc
+ln -s ~/.dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes
+ln -s ~/.dotfiles/.zshrc_wsl ~/.zshrc
+
+mkdir -p ~/.config/nvim
+
+ln -s ~/.dotfiles/config/nvim/init.vim ~/.config/nvim/init.vim
 
 source ~/.zshrc
 
@@ -71,3 +75,8 @@ rbenv global 3.0.2
 echo "gem: --no-document" > ~/.gemrc
 gem install bundler
 gem install rails
+
+######################
+#   Install stuff   #
+####################
+sudo apt install neovim
