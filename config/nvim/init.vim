@@ -20,6 +20,7 @@ call plug#begin()
 	Plug 'https://github.com/ryanoasis/vim-devicons'
 	Plug 'https://github.com/dracula/vim'
 	Plug 'https://github.com/airblade/vim-gitgutter'
+	Plug 'https://github.com/jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 colorscheme dracula
