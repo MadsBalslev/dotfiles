@@ -1,6 +1,4 @@
 ln -s /mnt/c/dev
-cp -r /mnt/c/Users/madsp/.ssh ~/.
-chmod 700 ~/.ssh/id_ed25519
 
 sudo apt update && sudo apt upgrade
 
@@ -15,7 +13,7 @@ chsh -s $(which zsh)
 touch ~/.zshrc
 
 #Install Oh-My-Zsh
-sudo apt-get install curl -y
+sudo apt install curl -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone https://github.com/MadsBalslev/dotfiles.git ~/.dotfiles
@@ -47,29 +45,23 @@ git config --global color.ui auto
 git config --global autocrlf false
 
 ########################
-#       NVM Setup     #
+#      Node Setup     #
 #######################
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-source ~/.zshrc
-nvm install --lts
-nvm use --lts
-
-npm install --global yarn
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 ########################
 #      Ruby Setup     #
 #######################
 sudo apt-get update
-sudo apt install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev sqlite3 libsqlite3-dev libxslt-dev -y
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
+sudo apt-get install git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn
 
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+echo 'eval "$(~/.rbenv/bin/rbenv init - zsh)"' >> ~/.zshrc
+
 source ~/.zshrc
 
-rbenv install 3.0.2
-rbenv global 3.0.2
-
+rbenv install 3.1.2
 ########################
 #      Rails Setup    #
 #######################
@@ -77,6 +69,7 @@ echo "gem: --no-document" > ~/.gemrc
 gem install bundler
 gem install rails
 
+rbenv rehash
 ######################
 #   Install stuff   #
 ####################
