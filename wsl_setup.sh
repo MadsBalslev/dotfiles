@@ -16,16 +16,15 @@ touch ~/.zshrc
 sudo apt install curl -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-git clone https://github.com/MadsBalslev/dotfiles.git ~/.dotfiles
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-ln -s ~/.dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes
+ln -s ~/dotfiles/.zshrc ~/.zshrc
 
 mkdir -p ~/.config/nvim
 
-ln -s ~/.dotfiles/config/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotfiles/config/nvim/init.vim ~/.config/nvim/init.vim
 
 source ~/.zshrc
 
@@ -56,8 +55,6 @@ sudo apt-get update
 sudo apt-get install git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn
 
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(~/.rbenv/bin/rbenv init - zsh)"' >> ~/.zshrc
 
 source ~/.zshrc
 
