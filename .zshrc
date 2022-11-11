@@ -1,4 +1,5 @@
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 HOST_NAME=Mads
 
@@ -33,6 +34,10 @@ alias gaa="git add ."
 alias gcm="git commit -m"
 alias gpsh="git push origin"
 
+# NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Rbenv
+eval "$(~/.rbenv/bin/rbenv init - zsh)"
