@@ -21,7 +21,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 ln -s ~/.dotfiles/mads.zsh-theme ~/.oh-my-zsh/themes
-ln -s ~/.dotfiles/.zshrc_wsl ~/.zshrc
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
 
 mkdir -p ~/.config/nvim
 
