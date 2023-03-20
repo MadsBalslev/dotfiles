@@ -25,7 +25,7 @@ echo "brew installing stuff"
 # zsh: Instead of bash
 # tree: really handy for listing out directories in text
 # jq: A lightweight and flexible command-line JSON processor
-brew install jq git tldr neovim tmux redis
+brew install jq git tldr neovim tmux redis rbenv ruby-build
 
 echo "installing node (via nvm)"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
@@ -138,4 +138,5 @@ install: \n\
   Scroll Reverser (Web) \n
 \n\
 login to literally everything \n\
+run 'rbenv init' and follow instructions \n\
 "
