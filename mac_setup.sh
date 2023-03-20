@@ -1,7 +1,11 @@
 # Ask for the administrator password upfront
 sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
+done 2>/dev/null &
 
 ###############################################################################
 #               Installation of HomeBrew and programs                         #
@@ -21,7 +25,7 @@ echo "brew installing stuff"
 # zsh: Instead of bash
 # tree: really handy for listing out directories in text
 # jq: A lightweight and flexible command-line JSON processor
-brew install jq git tldr neovim tmux
+brew install jq git tldr neovim tmux redis
 
 echo "installing node (via nvm)"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
@@ -40,10 +44,25 @@ echo "Custom ZSH plugins"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-
 echo "installing apps with brew"
 brew tap homebrew/cask-versions
-brew install alfred discord iterm2 spectacle firefox-developer-edition spotify steam transmission google-chrome visual-studio-code insomnia vlc neovim
+brew install --cask \
+  discord \
+  docker \
+  figma \
+  firefox-developer-edition \
+  iterm2 \
+  insomnia \
+  linear-linear \
+  notion \
+  obsidian \
+  raycast \
+  slack \
+  spotify \
+  steam \
+  transmission \
+  visual-studio-code \
+  vlc
 
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
@@ -64,7 +83,6 @@ defaults write com.apple.finder ShowStatusBar -bool true
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
-
 
 ###############################################################################
 #                          Configure GIT                                      #
@@ -99,26 +117,24 @@ touch ~/.hushlogin
 # Kill affected applications                                                  #
 ###############################################################################
 for app in "Activity Monitor" \
-"Address Book" \
-"Calendar" \
-"cfprefsd" \
-"Contacts" \
-"Dock" \
-"Finder" \
-"Mail" \
-"Messages" \
-"Photos" \
-"Safari" \
-"SystemUIServer" \
-"iCal"; do
-  killall "${app}" &> /dev/null
+  "Address Book" \
+  "Calendar" \
+  "cfprefsd" \
+  "Contacts" \
+  "Dock" \
+  "Finder" \
+  "Mail" \
+  "Messages" \
+  "Photos" \
+  "Safari" \
+  "SystemUIServer" \
+  "iCal"; do
+  killall "${app}" &>/dev/null
 done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
 printf "TODO:\n\
 install: \n\
-  Spark mail (App Store) \n
-  Notability (App Store) \n
   Scroll Reverser (Web) \n
 \n\
 login to literally everything \n\
