@@ -106,12 +106,11 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias ls="colorls"
 
 
-export PATH="/opt/homebrew/opt/libpq/bin:$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export EDITOR="nvim"
 
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-eval "$(tmuxifier init -)"
 eval "$(starship init zsh)"
