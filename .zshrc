@@ -106,7 +106,7 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias ls="colorls"
 
 
-export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 export EDITOR="nvim"
 
 
