@@ -1,7 +1,7 @@
-# /Users/mads/.config/tmuxinator/sveltekit-fullstack.yml
+# /Users/mads/.config/tmuxinator/teameffect.yml
 
-name: sveltekit-fullstack
-root: ~/dev/sveltekit-fullstack
+name: teameffect
+root: ~/dev/teameffect/teameffect
 
 # Optional tmux socket
 # socket_name: foo
@@ -12,7 +12,7 @@ root: ~/dev/sveltekit-fullstack
 # Project hooks
 
 # Runs on project start, always
-# on_project_start: command
+on_project_start: bundle install && yarn install
 
 # Run on project start, the first time
 # on_project_first_start: command
@@ -24,7 +24,7 @@ root: ~/dev/sveltekit-fullstack
 # on_project_exit: command
 
 # Run on project stop
-# on_project_stop: command
+# on_project_stop:
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
 # pre_window: rbenv shell 2.0.0-p247
@@ -36,7 +36,7 @@ root: ~/dev/sveltekit-fullstack
 # tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
-# startup_window: editor
+startup_window: editor
 
 # Specifies (by index) which pane of the specified window will be selected on project startup. If not set, the first pane is used.
 # startup_pane: 1
@@ -47,12 +47,9 @@ root: ~/dev/sveltekit-fullstack
 windows:
   - editor: nvim
   - server:
-      layout: main-vertical
+      layout: even-horizontal
       panes:
-        - yarn:
-            - yarn && yarn run dev
-        - prisma:
-            - npx prisma generate && npx prisma studio
-        - docker:
-            - docker-compose up
+        - bin/dev
+        - rails c
+  - docker: docker-compose -f docker-compose-dev.yml up
   - git: lazygit
