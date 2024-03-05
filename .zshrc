@@ -104,6 +104,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias ls="colorls"
+alias mux="tmuxinator"
 
 
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
