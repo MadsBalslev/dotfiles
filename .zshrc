@@ -23,4 +23,7 @@ export EDITOR="nvim"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
+
+export PATH="/Users/mads/dev/aau/p8/flutter/bin:$PATH"
+
 eval "$(starship init zsh)"
