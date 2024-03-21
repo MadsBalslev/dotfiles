@@ -2,6 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(pyenv init -)"
 
 HOST_NAME=Mads
 

@@ -14,6 +14,19 @@ return {
 			open_files_in_new_tab = true,
 			enable_git_status = true,
 			enable_diagnostics = true,
+
+			filesystem = {
+				follow_current_file = {
+					enabled = true,
+					leave_dir_open = false,
+				}
+			},
+			buffers = {
+				follow_current_file = {
+					enabled = true,
+					leave_dir_open = false,
+				}
+			}
 		})
 	end,
 }
