@@ -17,6 +17,7 @@ style = "Bold"
 decorations = "buttonless"
 dynamic_padding = true
 opacity = 1
+option_as_alt = "OnlyLeft"
 
 [window.padding]
 x = 18
@@ -30,3 +31,4 @@ bindings = [
   { key = "Right", mods = "Alt", chars = "\u001BF" },
   { key = "Left",  mods = "Alt", chars = "\u001BB" },
 ]
+
