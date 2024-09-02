@@ -2,7 +2,6 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(pyenv init -)"
 
 HOST_NAME=Mads
 
@@ -24,5 +23,5 @@ alias lg="lazygit"
 
 eval "$(starship init zsh)"
 
-eval "$(~/.local/bin/mise activate zsh)"
+eval "$(/opt/homebrew/bin/mise activate zsh)"
 
