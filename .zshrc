@@ -20,8 +20,18 @@ alias zshreload="source ~/.zshrc"
 alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias lg="lazygit"
 
+alias gcg="git config --edit --global"
+alias gcl="git config --edit --local"
+
 
 eval "$(starship init zsh)"
-
+source "$HOME/.rye/env"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
+
+# bun completions
+[ -s "/Users/mads/.bun/_bun" ] && source "/Users/mads/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
