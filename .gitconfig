@@ -1,7 +1,4 @@
 # This is Git's per-user configuration file.
-[user]
-	name = Mads Balslev
-	email = madspbalslev@gmail.com
 [init]
 	defaultBranch = main
 
@@ -28,3 +25,11 @@
   added = yellow
   changed = green
   untracked = cyan
+[core]
+  editor = nvim
+
+[includeIf "gitdir/i:~/dev/github/trifork/"]
+  path = ~/dev/github/trifork/.gitconfig
+
+[includeIf "gitdir/i:~/dev/github/madsbalslev/"]
+  path = ~/dev/github/madsbalslev/.gitconfig
