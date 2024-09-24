@@ -28,6 +28,10 @@
 [core]
   editor = nvim
 
+[user]
+  name = Mads Balslev
+  email = madspbalslev@gmail.com
+
 [includeIf "gitdir/i:~/dev/github/trifork/"]
   path = ~/dev/github/trifork/.gitconfig
 

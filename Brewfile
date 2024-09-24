@@ -16,6 +16,7 @@ brew "fzf"
 brew "lazygit"
 
 cask "figma"
+cask "zotero"
 cask "raycast"
 cask "visual-studio-code"
 cask "arc"
