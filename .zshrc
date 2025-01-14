@@ -22,7 +22,7 @@ alias lg="lazygit"
 
 alias gcg="git config --edit --global"
 alias gcl="git config --edit --local"
-
+alias s="kitten ssh"
 
 eval "$(starship init zsh)"
 source "$HOME/.rye/env"
@@ -35,3 +35,9 @@ eval "$(/opt/homebrew/bin/mise activate zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mads/.cache/lm-studio/bin"
+
+# Created by `pipx` on 2024-11-26 10:08:50
+export PATH="$PATH:/Users/mads/.local/bin"
