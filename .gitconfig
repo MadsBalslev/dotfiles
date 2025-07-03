@@ -37,3 +37,5 @@
 
 [includeIf "gitdir/i:~/dev/github/madsbalslev/"]
   path = ~/dev/github/madsbalslev/.gitconfig
+[fetch]
+	prune = true
