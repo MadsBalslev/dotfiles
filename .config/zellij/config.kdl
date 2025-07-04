@@ -208,6 +208,21 @@ keybinds clear-defaults=true {
         bind "Ctrl s" { SwitchToMode "normal"; }
         bind "u" { HalfPageScrollUp; }
     }
+    shared_among "normal" "locked" {
+        bind "Ctrl l" {
+            Run "lazygit" {
+                floating true
+                close_on_exit true
+                x "5%"
+                y "5%"
+                width "90%"
+                height "90%"
+                name "lazygit"
+            }
+        }
+    }
+
+
     entersearch {
         bind "Ctrl c" { SwitchToMode "scroll"; }
         bind "esc" { SwitchToMode "scroll"; }
