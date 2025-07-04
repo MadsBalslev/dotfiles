@@ -80,7 +80,7 @@ customCommands:
           title: "Breaking change"
           options:
             - name: "no"
-              value: "X"
+              value: " "
             - name: "yes"
               value: "!"
         - type: "input"
