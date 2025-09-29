@@ -12,7 +12,7 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/imagemagick@6/bin:$PATH"
 
 
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions nvm asdf)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions nvm)
 source $ZSH/oh-my-zsh.sh
 
 alias zshconfig="$EDITOR ~/.zshrc"
@@ -22,10 +22,8 @@ alias lg="lazygit"
 
 alias gcg="git config --edit --global"
 alias gcl="git config --edit --local"
-alias s="kitten ssh"
 
 eval "$(starship init zsh)"
-source "$HOME/.rye/env"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 
@@ -36,8 +34,26 @@ eval "$(/opt/homebrew/bin/mise activate zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/mads/.cache/lm-studio/bin"
+export XDG_CONFIG_HOME="$HOME/.config"
 
-# Created by `pipx` on 2024-11-26 10:08:50
-export PATH="$PATH:/Users/mads/.local/bin"
+. "$HOME/.local/bin/env"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mads/.lmstudio/bin"
+# End of LM Studio CLI section
+
+eval "$(zoxide init zsh)"
+
+cx() {
+  if [[ "$1" == "update" ]]; then
+    brew update && brew upgrade codex
+  elif [[ "$1" == "version" ]]; then
+    codex --version
+  else
+    # Can add -c model_reasoning_effort='high' to enable high reasoning; removed due to
+    # gpt-5-codex having dynamic reasoning effort.
+    codex -m gpt-5-codex --search --yolo -c model_reasoning_summary_format=experimental "$@"
+  fi
+}

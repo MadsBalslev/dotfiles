@@ -32,10 +32,10 @@
   name = Mads Balslev
   email = madspbalslev@gmail.com
 
-[includeIf "gitdir/i:~/dev/github/trifork/"]
-  path = ~/dev/github/trifork/.gitconfig
+[includeIf "gitdir/i:~/dev/trifork/"]
+  path = ~/dev/trifork/.gitconfig
 
-[includeIf "gitdir/i:~/dev/github/madsbalslev/"]
-  path = ~/dev/github/madsbalslev/.gitconfig
+[includeIf "gitdir/i:~/dev/mads/"]
+  path = ~/dev/mads/.gitconfig
 [fetch]
 	prune = true
