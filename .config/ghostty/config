@@ -14,4 +14,6 @@ theme = catppuccin-mocha.conf
 
 # Mac OS specific settings
 macos-titlebar-style = hidden
-macos-option-as-alt = true
+
+# Claude shift + enter newlines
+keybind = shift+enter=text:\x1b\r

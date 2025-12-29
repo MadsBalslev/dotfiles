@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+PLUGINS_DIR="$(dirname "$0")/plugins"
+CATPPUCCIN_DIR="$PLUGINS_DIR/catppuccin"
+
+# Create catppuccin directory if it doesn't exist
+mkdir -p "$CATPPUCCIN_DIR"
+
+echo "🎨 Downloading Catppuccin theme for tmux..."
+git clone https://github.com/catppuccin/tmux.git "$CATPPUCCIN_DIR/tmux"
+echo "✅ Successfully cloned Catppuccin tmux theme"
+echo ""
+echo "To use the Catppuccin theme, add this line to your tmux.conf:"
+echo "run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux"
+echo ""
