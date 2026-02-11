@@ -24,6 +24,8 @@ alias lg="lazygit"
 alias gcg="git config --edit --global"
 alias gcl="git config --edit --local"
 
+alias tx="tmuxinator"
+
 eval "$(starship init zsh)"
 eval "$(/opt/homebrew/bin/mise activate zsh --shims)"
 
@@ -63,7 +65,7 @@ cx() {
   else
     # Can add -c model_reasoning_effort='high' to enable high reasoning; removed due to
     # gpt-5-codex having dynamic reasoning effort.
-    codex -m gpt-5.1-codex-max --enable web_search_request --yolo -c model_reasoning_summary_format=experimental "$@"
+    codex -m gpt-5.2-codex-max --enable web_search_request --yolo -c model_reasoning_summary_format=experimental "$@"
   fi
 }
 

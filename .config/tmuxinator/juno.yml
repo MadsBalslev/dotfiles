@@ -11,24 +11,34 @@ windows:
       root: /Users/mads/dev/trifork/juno/juno-service-bec-adapter
       layout: even-horizontal
       panes:
-        - dotnet run --project src/BecBankzoneApiAdapter.AppHost
         -
 
   - process-docs:
       root: /Users/mads/dev/trifork/juno/juno-service-process-documentation-api
       layout: even-horizontal
       panes:
-        - dotnet run --project src/ProcessDocumentationApi.AppHost
         -
 
   - rule-evaluation:
       root: /Users/mads/dev/trifork/juno/juno-service-rule-evaluation
       layout: even-horizontal
       panes:
-        - dotnet run --project src/RuleEvaluationService.AppHost
         -
 
-  - common:
-      root: /Users/mads/dev/trifork/juno/juno-common
+  - nyk-robot:
+      root: /Users/mads/dev/trifork/juno/juno-service-nyk-robot-adapter
+      layout: even-horizontal
       panes:
         -
+
+  - apphost:
+      root: /Users/mads/dev/trifork/juno/juno-devops
+      layout: even-horizontal
+      panes:
+        - dotnet run --project Juno.AppHost/Juno.AppHost/
+
+  - k9s:
+      root: /Users/mads/dev/trifork/juno
+      layout: even-horizontal
+      panes:
+        - k9s --context aks-andmoney-test -n juno-dev
